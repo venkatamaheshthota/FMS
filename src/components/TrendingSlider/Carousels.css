@@ -1,0 +1,37 @@
+.image-container {
+  position: relative;
+  display: inline-block;
+  /* z-index: 100; */
+}
+
+.positioned-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: "1px 3px 1px #9E9E9E"; 
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  /* padding: 10px;*/
+}
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  max-height: 50%;
+
+   .carousel {
+      .slide {
+          img {
+              height: 100%;
+              width: 100%;
+          }
+      }
+   }
+  }
+
+
+  .slideImage {
+    width: 100%;
+    /* whatever height you'd like */
+    height: 200px;
+    object-fit: cover;
+  }
