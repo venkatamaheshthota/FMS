@@ -42,7 +42,7 @@ const Carousels = ({ data }: {
             {/* <img id="backgroundimage" src="/images/blog/img6.jpg" alt="" className="slideImage" style={{width: "100%", height: '900px', resizeMode: 'cover'}}></img> */}
             <video
               ref={vidRef}
-              autoPlay={true} src={'videos/grandGablesInn1.mp4'}
+              autoPlay={true} src={'videos/grandGablesInn1.mov'}
               muted
               loop/>
             {/* <ItemComponent/> */}
