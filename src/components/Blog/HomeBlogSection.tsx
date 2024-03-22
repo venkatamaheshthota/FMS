@@ -9,7 +9,7 @@ const HomeBlogSection = ({ posts }: any) => {
         <div className="mb-[60px]">
           <SectionTitle
             subtitle="Events"
-            title="Florida Main Street"
+            title=""
             paragraph="Our upcoming Meetings & Events"
             width="640px"
             center

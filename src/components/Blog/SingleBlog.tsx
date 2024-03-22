@@ -4,24 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
-  const { title, coverImage, excerpt, date, slug } = blog;
-  console.log(coverImage);
+  const { title, coverImage, excerpt, date, slug, link } = blog;
 
   return (
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
       <div className="mb-8 overflow-hidden rounded">
-        <Link href={'#'}>
+        <Link href={link}  target="_blank">
           <Image
             src={coverImage}
             alt="image"
             className="w-full transition group-hover:rotate-6 group-hover:scale-125"
+            style={{height: 400}}
             width={408}
             height={272}
           />
         </Link>
       </div>
       <div>
-        <span className="mb-5 inline-block rounded bg-primary px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
+        <span
+          className="mb-5 inline-block rounded bg-primary px-4 py-1 text-center text-xs font-semibold leading-loose text-white"
+          style={{ backgroundColor: '#81b583' }}
+        >
           {format(new Date(date), "dd MMM yyyy")}
         </span>
         <h3>
