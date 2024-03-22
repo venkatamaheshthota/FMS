@@ -25,7 +25,7 @@ export default function Home() {
     <main>
       <ScrollUp />
       <Hero />
-      {/* <HomeBlogSection posts={posts} /> */}
+      <HomeBlogSection posts={posts} />
       {/* <Features /> */}
       {/* <About /> */}
       {/* <CallToAction /> */}
