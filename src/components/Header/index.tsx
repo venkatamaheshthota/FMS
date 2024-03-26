@@ -46,35 +46,25 @@ const Header = () => {
   return (
     <>
     <nav className="navbar navbar-expand-lg nav-container" style={{padding: '15px'}}>
-      <div className="container">
-        <div className="relative -mx-4 flex items-center">
-          <div className="flex w-full items-center justify-between px-4">
-            <a className="navbar-brand display-print" href="/">
+        <div className="container">
+          <div className="relative -mx-4 flex items-center">
+            <div className="flex w-full items-center justify-between px-4">
+              <a className="navbar-brand display-print" href="https://dos.fl.gov/" target="_blank">
                 <img
                   src={"/images/logo/florida_state_logo.png"}
                   className="img-responsive dosLogo"
                   alt="Florida Department of State"
                 />
-            </a>
-          </div>
-          <div className="flex w-fulltext-right text-white justify-between px-4">
-            <span
-              className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal"
-              id="basic-addon2">
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="h-5 w-5">
-                  <path
-                      fillRule="evenodd"
-                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                      clipRule="evenodd" />
-              </svg>
-            </span>
+              </a>
+
+            </div>
+            <div className="flex w-full justify-end">
+              <a href="https://dos.fl.gov/historical/" target="_blank" className={`text-white mb-1 dark:text-white`}>
+                {"Division of Historical Resources"}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
     </nav>
     <header
         className={`ud-header left-0 top-${sticky ? 0: 15} z-40 flex w-full items-center ${
@@ -135,6 +125,7 @@ const Header = () => {
                         <li key={menuItem.id} className="group relative">
                           {pathUrl !== "/" ? (
                             <Link
+                              target="_blank"
                               scroll={false}
                               href={menuItem.path}
                               className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-dark dark:text-dark dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-2  ${
@@ -143,7 +134,8 @@ const Header = () => {
                             >
                               {menuItem.title}
                             </Link>
-                          ) : (
+                          ) : ( 	
+
                             <Link
                               scroll={false}
                               href={menuItem.path}
@@ -314,9 +306,20 @@ const Header = () => {
               </div>
             </div>
             <div className="flex w-full justify-end">
-              <p className={`text-white mb-1 dark:text-white`}>
-                {"Division of Arts and Culture"}
-              </p>
+            <span
+              className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal"
+              id="basic-addon2">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5">
+                  <path
+                      fillRule="evenodd"
+                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                      clipRule="evenodd" />
+              </svg>
+            </span>
             </div>
           </div>
         </div>

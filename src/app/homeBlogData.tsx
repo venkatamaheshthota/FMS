@@ -2,29 +2,29 @@ import { Blog } from "../types/blog";
 
 const HomeBlogData: Blog[] = [
   {
-    title: "Hawana Arts and Crafts Bazaar, A tribute to Jonny Cash",
-    date: '2024-03-18T00:00:00.000Z',
-    excerpt: "April 27th, 2024, 7p-10p \nGeneral Admission Tickets $30 \nPremium Center Stage front Tickets $40",
-    coverImage: '/images/blog/blog-02.png',
-    slug: 'blog-example-with-mdx-file',
-    link: 'https://www.havanamainstreet.com/honkytonknhavana'
-
-  },
-  {
-    title: 'Hawana Arts and Crafts Bazaar',
+    title: 'Arts and Craft bazar',
     date: '2024-04-09T00:00:00.000Z',
     excerpt: "Come one, come all to our Havana Arts and Crafts Bazaar, where local artisans & crafters come together to showcase their unique creations in beautiful downtown Havana.",
     coverImage: '/images/blog/blog-01.png',
     slug: 'bootstrap-templates',
-    link: 'https://www.havanamainstreet.com/'
+    link: 'https://www.havanamainstreet.com/artsandcraftsbazaar'
   },
   {
-    title: 'Paula Walborsky Book Reading and Signing',
+    title: "Havana Quincy Plein Air Painting",
+    date: '2024-03-18T00:00:00.000Z',
+    excerpt: "April 27th, 2024, 7p-10p \nGeneral Admission Tickets $30 \nPremium Center Stage front Tickets $40",
+    coverImage: '/images/blog/blog-02.png',
+    slug: 'blog-example-with-mdx-file',
+    link: 'https://www.quincymainstreet.org/calendar/havana-quincy-plein-air-painting/'
+
+  },
+  {
+    title: 'Honky Tonk’n Havana',
     date: '2024-05-06T00:00:00.000Z',
     excerpt: 'March 19 @ 5:00 pm - 7:00 pm',
     coverImage: '/images/blog/blog-03.png',
     slug: 'contact-form',
-    link: 'https://www.quincymainstreet.org/calendar/paula-walborsky-book-reading-and-signing/'
+    link: 'https://www.havanamainstreet.com/honkytonknhavana'
   },
   // {
   //   title: 'POMS24',

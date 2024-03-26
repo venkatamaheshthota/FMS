@@ -2,6 +2,18 @@ import { Menu } from "@/types/menu";
 
 const menuData: Menu[] = [
   {
+    id: 4,
+    title: "About",
+    path: "/about",
+    newTab: false,
+  },
+  {
+    id: 5,
+    title: "Main Street News",
+    path: "https://dos.fl.gov/historical/meetings-and-events/news-and-press-releases/",
+    newTab: true,
+  },
+  {
     id: 1,
     title: "Communities",
     path: "/",
@@ -14,68 +26,38 @@ const menuData: Menu[] = [
     newTab: false,
   },
   {
-    id: 3,
-    title: "Getting Started",
-    path: "/",
-    newTab: false,
-  },
-  // {
-  //   id: 5,
-  //   title: "Contact",
-  //   path: "/contact",
-  //   newTab: false,
-  // },
-  // {
-  //   id: 5,
-  //   title: "Blog",
-  //   path: "/blogs",
-  //   newTab: false,
-  // },
-  {
     id: 6,
     title: "More",
     newTab: false,
     submenu: [
       {
+        id: 3,
+        title: "Getting Started",
+        path: "https://dos.fl.gov/historical/preservation/florida-main-street/getting-started/",
+        newTab: false,
+      },
+      {
         id: 60,
         title: "The Four Point Approach",
-        path: "/about",
+        path: "https://dos.fl.gov/historical/preservation/florida-main-street/the-four-point-approach/",
         newTab: false,
       },
       {
         id: 61,
-        title: "Main Street News",
-        path: "/about",
+        title: "Job Opportunities",
+        path: "https://dos.fl.gov/historical/preservation/florida-main-street/main-street-job-opportunities/",
         newTab: false,
       },
       {
         id: 62,
-        title: "Program Resources",
-        path: "/about",
+        title: "Preservation of Main Street",
+        path: "https://dos.fl.gov/historical/preservation/florida-main-street/preservation-on-main-street-conference/",
         newTab: false,
       },
       {
         id: 63,
-        title: "Florida Main Street Reporting System",
-        path: "/contact",
-        newTab: false,
-      },
-      {
-        id: 64,
-        title: "Main Street Job Opportunities",
-        path: "/blogs",
-        newTab: false,
-      },
-      {
-        id: 66,
-        title: "Preservation on Main Street Conference",
-        path: "/about",
-        newTab: false,
-      },
-      {
-        id: 67,
         title: "Ask the Locals",
-        path: "/about",
+        path: "https://dos.fl.gov/historical/preservation/florida-main-street/ask-the-locals/",
         newTab: false,
       },
     ],

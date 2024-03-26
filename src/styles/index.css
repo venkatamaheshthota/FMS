@@ -22,6 +22,10 @@ body {
 #navbarCollapse li .ud-menu-scroll.active {
   @apply opacity-70;
 }
+/* #navbarCollapse li .ud-menu-scroll a:hover {
+  color: #06917f;
+} */
+
 .sticky-menu #navbarCollapse li .ud-menu-scroll.active {
   @apply text-primary opacity-100 dark:text-white;
 }
