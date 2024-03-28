@@ -23,63 +23,7 @@ const Pricing = () => {
     >
       <div className="container">
         <div className="mb-[60px]">
-          <SectionTitle
-            subtitle="Pricing Table"
-            title="Our Pricing Plan"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-          />
-        </div>
-
-        <div className="-mx-4 flex flex-wrap justify-center">
-          {products.map((product, i) => (
-            <PricingBox key={1} product={product} />
-          ))}
-          {/*           
-          <PricingBox
-            popular={false}
-            packageName="Lite"
-            price="19.99"
-            subtitle="STARTING FROM"
-            btn="Purchase Now"
-            purchaseLink="/#"
-          >
-            <OfferList text="1 User" />
-            <OfferList text="All UI components" />
-            <OfferList text="Lifetime access" />
-            <OfferList text="Free updates" />
-            <OfferList text="Use on 1 (one) project" />
-            <OfferList text="3 Months support" />
-          </PricingBox>
-          <PricingBox
-            popular={true}
-            packageName="Basic"
-            price="19.99"
-            subtitle="STARTING FROM"
-            btn="Purchase Now"
-            purchaseLink="/#"
-          >
-            <OfferList text="1 User" />
-            <OfferList text="All UI components" />
-            <OfferList text="Lifetime access" />
-            <OfferList text="Free updates" />
-            <OfferList text="Use on 1 (one) project" />
-            <OfferList text="3 Months support" />
-          </PricingBox>
-          <PricingBox
-            packageName="Plus"
-            price="70.99"
-            subtitle="STARTING FROM"
-            btn="Purchase Now"
-            purchaseLink="/#"
-          >
-            <OfferList text="1 User" />
-            <OfferList text="All UI components" />
-            <OfferList text="Lifetime access" />
-            <OfferList text="Free updates" />
-            <OfferList text="Use on 1 (one) project" />
-            <OfferList text="3 Months support" />
-          </PricingBox> */}
+          <iframe src="https://www.google.com/maps/d/embed?mid=1h6HGUhX0vDkYoKvnvvMj8gWVrB7VnzI&ehbc=2E312F" width="100%" height="780"></iframe>
         </div>
       </div>
     </section>
