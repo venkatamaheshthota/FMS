@@ -67,10 +67,11 @@ const Header = () => {
         </div>
     </nav>
     <header
+        // style={{backgroundColor: '#c2c2c2'}}
         className={`ud-header left-0 top-${sticky ? 0: 15} z-40 flex w-full items-center ${
           sticky
             ? "shadow-nav fixed z-[9999] border-b border-stroke bg-dark/80 backdrop-blur-[5px] transition dark:border-dark-3/20 dark:bg-dark/10"
-            : "absolute bg-transparent"
+            : "absolute"
         }`}
       >
         <div className="container">
@@ -80,6 +81,7 @@ const Header = () => {
               <div>
                 {/* {console.log(sticky, pathUrl)} */}
                 <button
+                  style={{backgroundColor: 'black'}}
                   onClick={navbarToggleHandler}
                   id="navbarToggler"
                   aria-label="Mobile Menu"

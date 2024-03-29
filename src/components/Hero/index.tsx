@@ -15,7 +15,7 @@ const Hero = () => {
       <div
         id="home"
         className="relative overflow-hidden pt-[120px]  lg:pt-[100px]"
-        style={{backgroundColor:'gray'}}
+        style={{ backgroundColor: 'white' }}
       >
         <Carousels data={DATA} />
         <div className="container" style={{width:'100%'}}>
