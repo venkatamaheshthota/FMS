@@ -60,7 +60,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
       </div>
       <Modal isOpen={modalOpen} style={customStyles}>
         <div>
-          <p>Redirecting to a non Dos website</p>
+          <p>Continue to a non-Department of State website?</p>
           <div style={{ display: 'flex', marginTop: '20px'}}>
             <button
               onClick={handleCancel}
@@ -74,7 +74,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
                 marginRight: '10px'
               }}
             >
-              Don’t allow
+              No, stay here
             </button>
             <button
               onClick={handleConfirm}
@@ -87,7 +87,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
                 cursor: 'pointer',
               }}
             >
-              Allow
+              Yes, proceed
             </button>
           </div>
         </div>
