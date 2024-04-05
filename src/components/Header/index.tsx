@@ -67,7 +67,6 @@ const Header = () => {
         </div>
     </nav>
     <header
-        // style={{backgroundColor: '#c2c2c2'}}
         className={`ud-header left-0 top-${sticky ? 0: 15} z-40 flex w-full items-center ${
           sticky
             ? "shadow-nav fixed z-[9999] border-b border-stroke bg-dark/80 backdrop-blur-[5px] transition dark:border-dark-3/20 dark:bg-dark/10"
@@ -237,24 +236,6 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="hidden items-center justify-end pr-16 sm:flex lg:pr-0">
-                {/* theme toggler */}
-                {/* <button
-                  aria-label="theme toggler"
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white"
-                >
-                  <span>
-                    <svg
-                      viewBox="0 0 16 16"
-                      className="hidden h-[22px] w-[22px] fill-current dark:block"
-                    >
-                      <path d="M4.50663 3.2267L3.30663 2.03337L2.36663 2.97337L3.55996 4.1667L4.50663 3.2267ZM2.66663 7.00003H0.666626V8.33337H2.66663V7.00003ZM8.66663 0.366699H7.33329V2.33337H8.66663V0.366699V0.366699ZM13.6333 2.97337L12.6933 2.03337L11.5 3.2267L12.44 4.1667L13.6333 2.97337ZM11.4933 12.1067L12.6866 13.3067L13.6266 12.3667L12.4266 11.1734L11.4933 12.1067ZM13.3333 7.00003V8.33337H15.3333V7.00003H13.3333ZM7.99996 3.6667C5.79329 3.6667 3.99996 5.46003 3.99996 7.6667C3.99996 9.87337 5.79329 11.6667 7.99996 11.6667C10.2066 11.6667 12 9.87337 12 7.6667C12 5.46003 10.2066 3.6667 7.99996 3.6667ZM7.33329 14.9667H8.66663V13H7.33329V14.9667ZM2.36663 12.36L3.30663 13.3L4.49996 12.1L3.55996 11.16L2.36663 12.36Z" />
-                    </svg>
-
-                  </span>
-                </button> */}
-              </div>
             </div>
             <div className="flex w-full items-center justify-between px-4">
               <div className="w-200 max-w-full px-4">
@@ -308,20 +289,22 @@ const Header = () => {
               </div>
             </div>
             <div className="flex w-full justify-end">
-            <span
-              className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal"
-              id="basic-addon2">
-              <svg
+              <span
+                className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal"
+                id="basic-addon2">
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="h-5 w-5">
-                  <path
-                      fillRule="evenodd"
-                      d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                      clipRule="evenodd" />
+                  className="h-6 w-6">
+                <path
+                  fillRule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clipRule="evenodd"
+                />
               </svg>
-            </span>
+
+              </span>
             </div>
           </div>
         </div>
