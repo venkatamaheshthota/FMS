@@ -1,43 +1,38 @@
-import { TeamType } from "@/types/team";
 import SectionTitle from "../Common/SectionTitle";
-import SingleTeam from "../Team/SingleTeam";
+import SingleCommunity from "./SingleCommunity";
+import { CommunityType } from "@/types/communityType";
 
-const communityData: TeamType[] = [
+export const areas: any = {
+  NORTH_EAST: 'Northeast',
+  NORTH_WEST: 'Northwest',
+};
+
+const communityData: CommunityType[] = [
   {
     id: 1,
-    name: "Victory Bridge - Chattahoochee Main Street",
-    designation: "Built in 1922 by the Masters and Mullen Construction Company of Cleveland, Ohio",
+    name: "Fernandina Beach Main \nStreet",
+    area: areas.NORTH_EAST,
     image: "/images/team/bridge1.jpeg",
-    facebookLink: "/#",
-    twitterLink: "/#",
-    instagramLink: "/#",
   },
   {
     id: 2,
-    name: "The Hacienda",
-    designation: "New Port Richey Main Street is excited about the revitalization of the architectural marvel, The Hacienda.",
+    name: "Quincy Main \nStreet",
+    area: areas.NORTH_WEST,
     image: "/images/team/bridge2.jpeg",
-    facebookLink: "/#",
-    twitterLink: "/#",
-    instagramLink: "/#",
+
   },
   {
     id: 3,
-    name: "Paradise Park",
-    designation: "Just down the river from Silver Springs, another riverside park existed during the 1950s and 1960s.",
+    name: "Chattohoochee Main \nStreet",
+    area: areas.NORTH_WEST,
     image: "/images/team/bridge3.jpeg",
-    facebookLink: "/#",
-    twitterLink: "/#",
-    instagramLink: "/#",
+
   },
   {
     id: 4,
-    name: "Silver Springs",
-    designation: "n 1924, Ed Carmichael leased Silver Springs to William Carl Ray and W. C. “Shorty” Davidson. They signed a 50-year lease and intended to develop the land into an attraction.",
+    name: "Havana Main \nStreet",
+    area: areas.NORTH_WEST,
     image: "/images/team/bridge4.jpeg",
-    facebookLink: "/#",
-    twitterLink: "/#",
-    instagramLink: "/#",
   },
 ];
 
@@ -60,8 +55,8 @@ const Communities = () => {
         </div>
 
         <div className="-mx-4 flex flex-wrap justify-center">
-          {communityData.map((team) => (
-            <SingleTeam key={team.id} team={team} />
+          {communityData.map((community) => (
+            <SingleCommunity key={community.id} community={community} />
           ))}
         </div>
       </div>
