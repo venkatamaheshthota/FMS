@@ -8,31 +8,31 @@ export const areas: any = {
 };
 
 const communityData: CommunityType[] = [
+  // {
+  //   id: 1,
+  //   name: "Fernandina Beach Main \nStreet",
+  //   area: areas.NORTH_EAST,
+  //   image: "/images/communities/bridge1.jpeg",
+  // },
   {
-    id: 1,
-    name: "Fernandina Beach Main \nStreet",
-    area: areas.NORTH_EAST,
-    image: "/images/team/bridge1.jpeg",
+    id: 4,
+    name: "Havana Main \nStreet",
+    area: areas.NORTH_WEST,
+    image: "/images/communities/havanacommunity.png",
   },
   {
     id: 2,
     name: "Quincy Main \nStreet",
     area: areas.NORTH_WEST,
-    image: "/images/team/bridge2.jpeg",
+    image: "/images/communities/quincycommunity.png",
 
   },
   {
     id: 3,
     name: "Chattohoochee Main \nStreet",
     area: areas.NORTH_WEST,
-    image: "/images/team/bridge3.jpeg",
+    image: "/images/communities/chtcommunity.png",
 
-  },
-  {
-    id: 4,
-    name: "Havana Main \nStreet",
-    area: areas.NORTH_WEST,
-    image: "/images/team/bridge4.jpeg",
   },
 ];
 

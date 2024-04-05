@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 const CommunitiesPage = () => {
   return (
     <main>
-      {/* <Breadcrumb pageName="Communities" /> */}
       <Communities />
     </main>
   );
