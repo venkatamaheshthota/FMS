@@ -14,6 +14,7 @@ import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 import HomeBlogData from "./homeBlogData";
 
+
 export const metadata: Metadata = {
   title: "Florida Main Street - Communities",
   description: "Florida Main Street - Communities",
