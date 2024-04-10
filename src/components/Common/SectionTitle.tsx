@@ -1,15 +1,19 @@
+import { ReactNode } from "react";
+
 const SectionTitle = ({
   subtitle,
   title,
   paragraph,
   width = "635px",
   center,
+  sortByButton
 }: {
   subtitle?: string;
   title: string;
   paragraph: string;
   width?: string;
   center?: boolean;
+  sortByButton?: ReactNode
 }) => {
   return (
     <div className="-mx-4 flex flex-wrap">
@@ -33,6 +37,7 @@ const SectionTitle = ({
           {paragraph}
         </p>
       </div>
+      {sortByButton && <div className="flex justify-end mt-4">{sortByButton}</div>}
     </div>
   );
 };

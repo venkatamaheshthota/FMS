@@ -8,17 +8,12 @@ export const areas: any = {
 };
 
 const communityData: CommunityType[] = [
-  // {
-  //   id: 1,
-  //   name: "Fernandina Beach Main \nStreet",
-  //   area: areas.NORTH_EAST,
-  //   image: "/images/communities/bridge1.jpeg",
-  // },
   {
     id: 4,
     name: "Havana Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/havanacommunity.png",
+    
   },
   {
     id: 2,
