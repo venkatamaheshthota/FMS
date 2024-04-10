@@ -6,14 +6,14 @@ const SectionTitle = ({
   paragraph,
   width = "635px",
   center,
-  sortByButton
+  RightButton
 }: {
   subtitle?: string;
   title: string;
   paragraph: string;
   width?: string;
   center?: boolean;
-  sortByButton?: ReactNode
+  RightButton?: ReactNode
 }) => {
   return (
     <div className="-mx-4 flex flex-wrap">
@@ -37,7 +37,7 @@ const SectionTitle = ({
           {paragraph}
         </p>
       </div>
-      {sortByButton && <div className="flex justify-end mt-4">{sortByButton}</div>}
+      {RightButton && <div className="flex justify-end mt-4">{RightButton}</div>}
     </div>
   );
 };
