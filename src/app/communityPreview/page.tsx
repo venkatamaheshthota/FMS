@@ -1,19 +1,18 @@
 import Communities from "@/components/Communities";
-import Events from "@/components/Events";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "All Events",
-  description: "EventsPage description",
+    "Community Preview",
+  description: "Community Preview",
 };
 
-const EventsPage = () => {
+const CommunitiesPreview = () => {
   return (
     <main>
-      <Events />
+      <Communities />
     </main>
   );
 };
 
-export default EventsPage;
+export default CommunitiesPreview;

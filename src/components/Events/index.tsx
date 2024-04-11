@@ -4,6 +4,7 @@ import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "../Blog/SingleBlog";
 import HomeBlogData from "@/app/homeBlogData";
+import BlogTable from "./BlogTable";
 
 const Events = () => {
   const mockData = [...HomeBlogData, ...HomeBlogData, ...HomeBlogData, ]
@@ -49,15 +50,11 @@ const Events = () => {
           center
           RightButton={SortButton}
         />
-      </div>
+        </div>
 
-      <div className="-mx-4 flex flex-wrap">
-        {sortedPosts.map((blog: any) => (
-          <div key={blog.id} className="w-full px-4 md:w-1/2 lg:w-1/3">
-            <SingleBlog blog={blog} />
-          </div>
-        ))}
-      </div>
+        <div className="py-8">
+          <BlogTable blogs={sortedPosts} itemsPerPage={5}/>
+        </div>
     </div>
   </section>
   );

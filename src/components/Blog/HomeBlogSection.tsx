@@ -6,26 +6,6 @@ import { useRouter } from "next/navigation";
 const HomeBlogSection = ({ posts }: any) => {
   const router = useRouter();
 
-  // const [sortedPosts, setSortedPosts] = useState([...posts]);
-  // const [isSorted, setIsSorted] = useState(false)
-
-  console.log(posts)
-  
-  // const handleSortByDate = () => {
-  //   // Create a copy of posts to sort
-  //   const sortedPostsCopy = [...posts];
-
-  //   if (!isSorted) {
-  //     // Sort by date in ascending order
-  //     sortedPostsCopy.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  //   } else {
-  //     // Reverse the order of sortedPostsCopy (i.e., sort in descending order)
-  //     sortedPostsCopy.reverse();
-  //   }
-
-  //   setSortedPosts(sortedPostsCopy); // Update state with sorted posts
-  //   setIsSorted(!isSorted); // Toggle isSorted state
-  // };
 
   const handleViewAllButton = () => {
     router.push("/events");
