@@ -60,7 +60,7 @@ const Events = () => {
         </div>
 
         <div className="py-8">
-          <BlogTable blogs={sortedPosts} itemsPerPage={5} handleView={handlePreviewClick}/>
+          <BlogTable blogs={sortedPosts} itemsPerPage={5}/>
         </div>
     </div>
   </section>

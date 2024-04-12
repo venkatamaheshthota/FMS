@@ -5,10 +5,9 @@ import { Blog } from '@/types/blog';
 interface BlogTableProps {
   blogs: Blog[];
   itemsPerPage: number;
-  handleView: () => void
 }
 
-const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }) => {
+const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlogs, setCurrentBlogs] = useState(blogs)
 
@@ -68,8 +67,7 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <a
-                onClick={handleView}
-                //   href={blog.link}
+                  href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline hover:text-blue-800 hover:cursor-pointer"
