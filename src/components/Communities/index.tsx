@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 import SectionTitle from "../Common/SectionTitle";
 import SingleCommunity from "./SingleCommunity";
 import { CommunityType } from "@/types/communityType";
@@ -31,7 +33,14 @@ const communityData: CommunityType[] = [
   },
 ];
 
+
+
 const Communities = () => {
+  const router = useRouter();
+
+  const handleView = () => {
+    router.push('communityPreview')
+  }
   return (
     <section
       id="Communities"
@@ -51,7 +60,7 @@ const Communities = () => {
 
         <div className="-mx-4 flex flex-wrap justify-center">
           {communityData.map((community) => (
-            <SingleCommunity key={community.id} community={community} />
+            <SingleCommunity key={community.id} community={community} handleView={handleView}/>
           ))}
         </div>
       </div>
