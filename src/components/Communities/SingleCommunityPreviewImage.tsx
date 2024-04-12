@@ -73,7 +73,7 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
         <div className="col-span-1 h-96 bg-gray-200 rounded-lg shadow-lg">
           {/* <p>Map goes here</p> */}
           <div className="mb-[60px]">
-          <iframe src="https://www.google.com/maps/d/embed?mid=1h6HGUhX0vDkYoKvnvvMj8gWVrB7VnzI&ehbc=2E312F" width="100%" height="400"></iframe>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" width="100%" height="400"></iframe>
         </div>
         </div>
       </div>
