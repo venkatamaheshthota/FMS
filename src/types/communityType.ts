@@ -3,5 +3,7 @@ export type CommunityType = {
     name: string;
     image: string;
     area?: string;
+    description?: string;
+    link?: string;
   };
   

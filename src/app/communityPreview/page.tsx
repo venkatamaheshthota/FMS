@@ -1,4 +1,4 @@
-import Communities from "@/components/Communities";
+import CommunityPreview from "@/components/Communities/CommunityPreview";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const CommunitiesPreview = () => {
   return (
     <main>
-      <Communities />
+      <CommunityPreview />
     </main>
   );
 };

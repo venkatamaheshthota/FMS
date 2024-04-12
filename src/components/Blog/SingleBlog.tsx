@@ -8,14 +8,10 @@ import { useState } from "react";
 import Modal from 'react-modal';
 
 
-const SingleBlog = ({ blog }: { blog: Blog }) => {
+const SingleBlog = ({ blog, handleRedirect }: { blog: Blog, handleRedirect?: () => void }) => {
   const { title, coverImage, excerpt, date, slug, link } = blog;
   const [modalOpen, setModalOpen] = useState(false);
 
-
-  const handleLinkClick = () => {
-      setModalOpen(true);
-  };
 
   const handleConfirm = () => {
     setModalOpen(false);
@@ -30,7 +26,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
       <div className="mb-8 overflow-hidden rounded">
 
-        <a target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>
+        <a target="_blank" rel="noopener noreferrer" onClick={handleRedirect}>
           <Image
             src={coverImage}
             alt="image"

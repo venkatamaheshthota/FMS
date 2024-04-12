@@ -10,6 +10,10 @@ const HomeBlogSection = ({ posts }: any) => {
   const handleViewAllButton = () => {
     router.push("/events");
   }
+
+  const handleRedirect = () => {
+    router.push("communityPreview")
+  }
   
 
   const ViewAllButton = (
@@ -38,7 +42,7 @@ const HomeBlogSection = ({ posts }: any) => {
         <div className="-mx-4 flex flex-wrap">
           {posts.slice(0, 3).map((blog: any) => (
             <div key={blog.id} className="w-full px-4 md:w-1/2 lg:w-1/3">
-              <SingleBlog blog={blog} />
+              <SingleBlog blog={blog} handleRedirect={handleRedirect}/>
             </div>
           ))}
         </div>
