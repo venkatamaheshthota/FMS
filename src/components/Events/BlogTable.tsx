@@ -1,12 +1,14 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { Blog } from '@/types/blog';
 
 interface BlogTableProps {
   blogs: Blog[];
   itemsPerPage: number;
+  handleView: () => void
 }
 
-const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
+const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlogs, setCurrentBlogs] = useState(blogs)
 
@@ -66,10 +68,11 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <a
-                  href={blog.link}
+                onClick={handleView}
+                //   href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-600 hover:underline hover:text-blue-800 hover:cursor-pointer"
                 >
                   View
                 </a>
