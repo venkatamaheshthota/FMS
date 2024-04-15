@@ -249,16 +249,17 @@ const Header = () => {
                     </>
                   ) : (
                     <>
-                      <Image
-                        src={`${sticky
-                            ? "/images/logo/florida_logo.png"
-                            : "/images/logo/florida_logo_orange.png"
-                          }`}
-                        alt="logo"
-                        width={140}
-                        height={30}
-                        style={{ marginLeft: 50 }}
-                        className="header-logo w-full dark:hidden"
+                        <Image
+                          src={`${"/images/logo/florida_logo_orange.png"}`}
+                          // src={`${sticky
+                          //     ? "/images/logo/florida_logo.png"
+                          //     : "/images/logo/florida_logo_orange.png"
+                          //   }`}
+                          alt="logo"
+                          width={140}
+                          height={30}
+                          style={{ marginLeft: 50 }}
+                          className="header-logo w-full dark:hidden"
                       />
                       {/* <Image
                         src={"/images/logo/florida_logo_orange.png"}
