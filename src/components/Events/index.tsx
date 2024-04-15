@@ -8,15 +8,11 @@ import BlogTable from "./BlogTable";
 import { useRouter } from "next/navigation";
 
 const Events = () => {
-  const router = useRouter();
 
   const mockData = [...HomeBlogData, ...HomeBlogData, ...HomeBlogData, ]
   const [sortedPosts, setSortedPosts] = useState([...mockData]);
   const [isSorted, setIsSorted] = useState(false)
 
-  const handlePreviewClick = () => {
-    router.push("communityPreview")
-  }
 
   const handleSortByDate = () => {
     // Create a copy of posts to sort
@@ -60,7 +56,7 @@ const Events = () => {
         </div>
 
         <div className="py-8">
-          <BlogTable blogs={sortedPosts} itemsPerPage={5} handleView={handlePreviewClick}/>
+          <BlogTable blogs={sortedPosts} itemsPerPage={5}/>
         </div>
     </div>
   </section>

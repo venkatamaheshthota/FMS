@@ -1,16 +1,29 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import { Blog } from '@/types/blog';
+import Modal from 'react-modal';
 
 interface BlogTableProps {
   blogs: Blog[];
   itemsPerPage: number;
-  handleView: () => void
 }
 
-const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }) => {
+const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlogs, setCurrentBlogs] = useState(blogs)
+  const [currentLink, setCurrentLink] = useState('')
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+
+  const handleConfirm = () => {
+    setModalOpen(false);
+    window.open(currentLink, '_blank');
+  };
+
+  const handleCancel = () => {
+    setModalOpen(false);
+  };
 
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
 
@@ -68,8 +81,10 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <a
-                onClick={handleView}
-                //   href={blog.link}
+                  onClick={() => {
+                    setCurrentLink(blog?.link)
+                    setModalOpen(true)
+                  }}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline hover:text-blue-800 hover:cursor-pointer"
@@ -98,8 +113,59 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage, handleView }
           </button>
         ))}
       </div>
+      <Modal isOpen={modalOpen} style={customStyles}>
+        <div>
+          <p>Continue to a non-Department of State website?</p>
+          <div style={{ display: 'flex', marginTop: '20px'}}>
+            <button
+              onClick={handleCancel}
+              style={{
+                backgroundColor: 'red',
+                color: 'white',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                marginRight: '10px'
+              }}
+            >
+              No, stay here
+            </button>
+            <button
+              onClick={handleConfirm}
+              style={{
+                backgroundColor: 'transparent',
+                color: 'black',
+                border: '2px solid black',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+              }}
+            >
+              Yes, proceed
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
 
 export default BlogTable;
+
+const customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 9999, // To make sure it's on top of all other elements
+  },
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    // width: '200px', // Adjust the width as needed
+    // height: '100px', // Adjust the height as needed
+  },
+};
