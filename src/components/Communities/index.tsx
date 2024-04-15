@@ -1,5 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
+
 import SectionTitle from "../Common/SectionTitle";
 import SingleCommunity from "./SingleCommunity";
 import { CommunityType } from "@/types/communityType";
@@ -11,21 +13,21 @@ export const areas: any = {
 
 const communityData: CommunityType[] = [
   {
-    id: 4,
+    id: 0,
     name: "Havana Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/havanacommunity.png",
     
   },
   {
-    id: 2,
+    id: 1,
     name: "Quincy Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/quincycommunity.png",
 
   },
   {
-    id: 3,
+    id: 2,
     name: "Chattohoochee Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/chtcommunity.png",
@@ -38,9 +40,11 @@ const communityData: CommunityType[] = [
 const Communities = () => {
   const router = useRouter();
 
-  const handleView = () => {
+  const handleView = async (community: CommunityType) => {
+    await localStorage.setItem('communityId', `${community.id}`);
     router.push('communityPreview')
   }
+
   return (
     <section
       id="Communities"

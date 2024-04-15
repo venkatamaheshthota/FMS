@@ -5,5 +5,6 @@ export type CommunityType = {
     area?: string;
     description?: string;
     link?: string;
+    poi?: any;
   };
   

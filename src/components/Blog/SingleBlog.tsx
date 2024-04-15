@@ -26,7 +26,7 @@ const SingleBlog = ({ blog, handleRedirect }: { blog: Blog, handleRedirect?: () 
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
       <div className="mb-8 overflow-hidden rounded">
 
-        <a target="_blank" rel="noopener noreferrer" onClick={handleRedirect}>
+        <a target="_blank" rel="noopener noreferrer" onClick={() => setModalOpen(true)}>
           <Image
             src={coverImage}
             alt="image"

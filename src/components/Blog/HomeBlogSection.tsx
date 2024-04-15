@@ -11,9 +11,6 @@ const HomeBlogSection = ({ posts }: any) => {
     router.push("/events");
   }
 
-  // const handleRedirect = () => {
-  //   router.push("communityPreview")
-  // }
   
 
   const ViewAllButton = (
