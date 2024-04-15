@@ -16,7 +16,7 @@ const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
-  }; 
+  };
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg nav-container" style={{padding: '15px'}}>
+      <nav className="navbar navbar-expand-lg nav-container" style={{ padding: '15px' }}>
         <div className="container">
           <div className="relative -mx-4 flex items-center">
             <div className="flex w-full items-center justify-between px-4">
@@ -65,60 +65,52 @@ const Header = () => {
             </div>
           </div>
         </div>
-    </nav>
-    <header
-        className={`ud-header left-0 top-${sticky ? 0: 15} z-40 flex w-full items-center ${
-          sticky
+      </nav>
+      <header
+        className={`ud-header left-0 top-${sticky ? 0 : 15} z-40 flex w-full items-center ${sticky
             ? "shadow-nav fixed z-[9999] border-b border-stroke bg-dark/80 backdrop-blur-[5px] transition dark:border-dark-3/20 dark:bg-dark/10"
             : "absolute"
-        }`}
+          }`}
       >
         <div className="container">
           <div className="relative flex items-center">
-            
+
             <div className="flex w-full items-center justify-between px-4">
               <div>
                 {/* {console.log(sticky, pathUrl)} */}
                 <button
-                  style={{backgroundColor: 'black'}}
+                  style={{ backgroundColor: 'black' }}
                   onClick={navbarToggleHandler}
                   id="navbarToggler"
                   aria-label="Mobile Menu"
                   className="absolute left-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 visible"
                 >
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
-                    } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                      pathUrl === "/" && sticky
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[7px] rotate-45" : " "
+                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
                         : "bg-white"
-                    }`}
+                      }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
-                      navbarOpen ? "opacity-0 " : " "
-                    } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                      pathUrl === "/" && sticky
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? "opacity-0 " : " "
+                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
                         : "bg-white"
-                    }`}
+                      }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
-                    } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${
-                      pathUrl === "/" && sticky
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[-8px] -rotate-45" : " "
+                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
                         : "bg-white"
-                    }`}
+                      }`}
                   />
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute left-0 z-30 w-[250px] mt-5 ml-5 lg:w-[250px] rounded border-[.5px] border-body-color/50 ${theme === "dark" ? 'bg-white': 'bg-dark'} px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark-2 ${
-                    navbarOpen ? "visible opacity-100" : "invisible opacity-0"
-                  }`}
+                  className={`navbar absolute left-0 z-30 w-[250px] mt-5 ml-5 lg:w-[250px] rounded border-[.5px] border-body-color/50 ${theme === "dark" ? 'bg-white' : 'bg-dark'} px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark-2 ${navbarOpen ? "visible opacity-100" : "invisible opacity-0"
+                    }`}
                 >
                   <ul className="block">
                     {menuData.map((menuItem, index) =>
@@ -129,26 +121,23 @@ const Header = () => {
                               target="_blank"
                               scroll={false}
                               href={menuItem.path}
-                              className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-dark dark:text-dark dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-2  ${
-                                pathUrl === menuItem?.path && "text-white"
-                              }`}
+                              className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-dark dark:text-dark dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-2  ${pathUrl === menuItem?.path && "text-white"
+                                }`}
                             >
                               {menuItem.title}
                             </Link>
-                          ) : ( 	
+                          ) : (
 
                             <Link
                               scroll={false}
                               href={menuItem.path}
-                              className={`ud-menu-scroll flex py-2 text-base lg:inline-flex lg:px-0 lg:py-2 ${
-                                sticky
+                              className={`ud-menu-scroll flex py-2 text-base lg:inline-flex lg:px-0 lg:py-2 ${sticky
                                   ? "text-dark group-hover:text-dark dark:text-white dark:group-hover:text-dark"
                                   : "text-body-color dark:text-dark lg:text-white"
-                              } ${
-                                pathUrl === menuItem?.path &&
+                                } ${pathUrl === menuItem?.path &&
                                 sticky &&
                                 "text-white"
-                              }`}
+                                }`}
                             >
                               {menuItem.title}
                             </Link>
@@ -185,11 +174,10 @@ const Header = () => {
                           ) : (
                             <button
                               onClick={() => handleSubmenu(index)}
-                              className={`ud-menu-scroll flex items-center justify-between py-2 text-base lg:inline-flex lg:px-0 lg:py-2 ${
-                                sticky
+                              className={`ud-menu-scroll flex items-center justify-between py-2 text-base lg:inline-flex lg:px-0 lg:py-2 ${sticky
                                   ? "text-white group-hover:text-primary dark:text-white dark:group-hover:text-primary"
                                   : "text-white"
-                              }`}
+                                }`}
                             >
                               {menuItem.title}
 
@@ -212,19 +200,17 @@ const Header = () => {
                           )}
 
                           <div
-                            className={`submenu relative left-0 top-full w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                              openIndex === index ? "!-left-[25px]" : "hidden"
-                            }`}
+                            className={`submenu relative left-0 top-full w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${openIndex === index ? "!-left-[25px]" : "hidden"
+                              }`}
                           >
                             {menuItem.submenu.map((submenuItem: any) => (
                               <Link
                                 href={submenuItem.path}
                                 key={submenuItem.id}
-                                className={`block rounded px-4 py-[10px] text-sm ${
-                                  pathUrl === submenuItem.path
+                                className={`block rounded px-4 py-[10px] text-sm ${pathUrl === submenuItem.path
                                     ? "text-primary"
                                     : "text-body-color hover:text-primary dark:text-dark-6 dark:hover:text-primary"
-                                }`}
+                                  }`}
                               >
                                 {submenuItem.title}
                               </Link>
@@ -241,9 +227,8 @@ const Header = () => {
               <div className="w-200 max-w-full px-4">
                 <Link
                   href="/"
-                  className={`navbar-logo block w-full ${
-                    sticky ? "py-2" : "py-5"
-                  } `}
+                  className={`navbar-logo block w-full ${sticky ? "py-2" : "py-5"
+                    } `}
                 >
                   {pathUrl !== "/" ? (
                     <>
@@ -265,15 +250,14 @@ const Header = () => {
                   ) : (
                     <>
                       <Image
-                        src={`${
-                          sticky
+                        src={`${sticky
                             ? "/images/logo/florida_logo.png"
                             : "/images/logo/florida_logo_orange.png"
-                        }`}
+                          }`}
                         alt="logo"
                         width={140}
                         height={30}
-                        style={{marginLeft: 50 }}
+                        style={{ marginLeft: 50 }}
                         className="header-logo w-full dark:hidden"
                       />
                       {/* <Image
@@ -289,21 +273,21 @@ const Header = () => {
               </div>
             </div>
             <div className="flex w-full justify-end">
-              <span 
-                className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal" 
+              <span
+                className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal"
                 id="basic-addon2">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
-                  fill={sticky ? "white" : "currentColor"} 
+                  fill={sticky ? "white" : "currentColor"}
                   className="h-6 w-6">
-                  <path 
-                    fillRule="evenodd" 
-                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" 
-                    clipRule="evenodd" 
-                    />
+                  <path
+                    fillRule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-          </span>
+              </span>
             </div>
           </div>
         </div>
