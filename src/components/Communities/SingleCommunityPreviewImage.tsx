@@ -12,7 +12,7 @@ import { Typography } from "@mui/material";
 
 
 const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }) => {
-  const { image, name, area, description, link } = community;
+  const { image, name, area, description, link, poi } = community;
 
   const handleLinkClick = () => {
     if (link) {
@@ -68,13 +68,13 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
       <div className="w-full grid grid-cols-2 gap-4 mt-8">
         <div className="col-span-1 h-96 ">
 
-          <AccordionComponent />
+          <AccordionComponent data={poi} />
         </div>
         <div className="col-span-1 h-96 bg-gray-200 rounded-lg shadow-lg">
           {/* <p>Map goes here</p> */}
           <div className="mb-[60px]">
-          <iframe src="https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" width="100%" height="400"></iframe>
-        </div>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" width="100%" height="400"></iframe>
+          </div>
         </div>
       </div>
     </>
@@ -82,7 +82,7 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
 };
 
 export default SingleCommunityPreviewImage;
-const AccordionComponent = () => {
+const AccordionComponent = ({ data }) => {
   const accordionItemStyle = {
     backgroundColor: '#81b583', // Background color for the AccordionSummary
     color: 'white', // Text color for the AccordionSummary
@@ -99,52 +99,82 @@ const AccordionComponent = () => {
           id="panel1-header"
           style={accordionItemStyle} // Apply custom styles to AccordionSummary
         >
-          <Typography>Gocki's Restaurant & Retail</Typography>
+          <Typography>{data[0].title}</Typography>
         </AccordionSummary>
+
+        {/* line 1 */}
         <AccordionDetails>
           <Typography>
-            Family-owned Restaurant and Retail Shop run by Malissa and Schel Collins.
+            {data[0].line1}
           </Typography>
         </AccordionDetails>
-        <AccordionDetails>
-          <Typography>
-            208 1st St NW, Havana, FL 32333
-          </Typography>
-        </AccordionDetails>
-        <AccordionDetails>
-          <p className="text-sm mt-4">
-            <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
-              <a href="https://kellumsfurniture.com/" target="_blank" rel="noopener noreferrer">
-                View website
-              </a>
-            </span>
-          </p>
-        </AccordionDetails>
+
+        {/* line 2 */}
+
+        {data[0].line2 &&
+          <AccordionDetails>
+            <Typography>
+              {data[0].line2}
+            </Typography>
+          </AccordionDetails>}
+
+        {/* link */}
+
+        {data[0].link &&
+          <AccordionDetails>
+            <p className="text-sm mt-4">
+              <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
+                <a href={data[0].link} target="_blank" rel="noopener noreferrer">
+                  View website
+                </a>
+              </span>
+            </p>
+          </AccordionDetails>
+        }
+
       </Accordion>
-      <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
+
+      {data[1] && <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
+          aria-controls="panel1-content"
+          id="panel1-header"
           style={accordionItemStyle} // Apply custom styles to AccordionSummary
         >
-          <Typography>Kellum's Furniture</Typography>
+          <Typography>{data[1].title}</Typography>
         </AccordionSummary>
+
+        {/* line 1 */}
         <AccordionDetails>
           <Typography>
-            Family-owned Furniture Store located at 106 N Main St, Havana, FL 32333.
+            {data[1].line1}
           </Typography>
         </AccordionDetails>
-        <AccordionDetails>
-          <p className="text-sm mt-4">
-            <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
-              <a href="https://kellumsfurniture.com/" target="_blank" rel="noopener noreferrer">
-                View website
-              </a>
-            </span>
-          </p>
-        </AccordionDetails>
-      </Accordion>
+
+        {/* line 2 */}
+
+        {data[1].line2 &&
+          <AccordionDetails>
+            <Typography>
+              {data[1].line2}
+            </Typography>
+          </AccordionDetails>}
+
+        {/* link */}
+
+        {data[1].link &&
+          <AccordionDetails>
+            <p className="text-sm mt-4">
+              <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
+                <a href={data[1].link} target="_blank" rel="noopener noreferrer">
+                  View website
+                </a>
+              </span>
+            </p>
+          </AccordionDetails>
+        }
+
+      </Accordion>}
     </div>
   );
 };
