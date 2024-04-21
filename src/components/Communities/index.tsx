@@ -54,7 +54,7 @@ const Communities = () => {
       <div className="container">
         <div className="mb-[60px]">
           <SectionTitle
-            subtitle="Ask the Locals"
+            // subtitle="Ask the Locals"
             title="Florida's Main Street communities"
             paragraph="Florida's Main Street communities are filled with history, culture and good news.  Local history, tales, stories and facts can shed some light on the values of a community.  Visit one of the links below to learn more about communities across Florida!"
             width="640px"
