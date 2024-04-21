@@ -93,3 +93,13 @@ body {
   .aText{
       color: #fff
   }
+  .active-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  

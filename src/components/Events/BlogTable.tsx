@@ -105,7 +105,7 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
             key={i + 1}
             onClick={() => paginate(i + 1)}
             className={`mx-1 px-3 py-1 rounded ${
-              currentPage === i + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
+              currentPage === i + 1 ? 'bg-green-900 text-white' : 'bg-gray-200 text-gray-700'
             }`}
           >
             {i + 1}
