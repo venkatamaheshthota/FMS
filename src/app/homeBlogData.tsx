@@ -7,7 +7,8 @@ const HomeBlogData: Blog[] = [
     excerpt: "Come one, come all to our Havana Arts and Crafts Bazaar, where local artisans & crafters come together to showcase their unique creations in beautiful downtown Havana.",
     coverImage: '/images/blog/blog-01.png',
     slug: 'bootstrap-templates',
-    link: 'https://www.havanamainstreet.com/artsandcraftsbazaar'
+    link: 'https://www.havanamainstreet.com/artsandcraftsbazaar',
+    area: "North East"
   },
   {
     title: "Havana Quincy Plein Air Painting",
@@ -15,7 +16,8 @@ const HomeBlogData: Blog[] = [
     excerpt: "April 27th, 2024, 7p-10p \nGeneral Admission Tickets $30 \nPremium Center Stage front Tickets $40",
     coverImage: '/images/blog/blog-02.png',
     slug: 'blog-example-with-mdx-file',
-    link: 'https://www.quincymainstreet.org/calendar/havana-quincy-plein-air-painting/'
+    link: 'https://www.quincymainstreet.org/calendar/havana-quincy-plein-air-painting/',
+    area: "North East"
 
   },
   {
@@ -24,7 +26,8 @@ const HomeBlogData: Blog[] = [
     excerpt: 'March 19 @ 5:00 pm - 7:00 pm',
     coverImage: '/images/blog/blog-03.png',
     slug: 'contact-form',
-    link: 'https://www.havanamainstreet.com/honkytonknhavana'
+    link: 'https://www.havanamainstreet.com/honkytonknhavana',
+    area: "North East"
   },
   // {
   //   title: 'POMS24',

@@ -14,27 +14,33 @@ export const areas: any = {
 const communityData: CommunityType[] = [
   {
     id: 0,
+    name: "Fernandina Beach",
+    area: areas.NORTH_WEST,
+    image: "/images/communities/fbeachCommunity.png",
+    
+  },
+  {
+    id: 1,
     name: "Havana Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/havanacommunity.png",
     
   },
   {
-    id: 1,
+    id: 2,
     name: "Quincy Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/quincycommunity.png",
 
   },
   {
-    id: 2,
+    id: 3,
     name: "Chattohoochee Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/chtcommunity.png",
 
   },
 ];
-
 
 
 const Communities = () => {

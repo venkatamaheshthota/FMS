@@ -10,9 +10,10 @@ import Button from '@mui/material/Button';
 import { Typography } from "@mui/material";
 
 
+const DEFAULT_MAP_LINK = "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" // florida mainstreet
 
 const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }) => {
-  const { image, name, area, description, link, poi } = community;
+  const { image, name, area, description, link, poi, mapLink = DEFAULT_MAP_LINK } = community;
 
   const handleLinkClick = () => {
     if (link) {
@@ -73,7 +74,7 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
         <div className="col-span-1 h-96 bg-gray-200 rounded-lg shadow-lg">
           {/* <p>Map goes here</p> */}
           <div className="mb-[60px]">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" width="100%" height="400"></iframe>
+            <iframe src={mapLink} width="100%" height="400"></iframe>
           </div>
         </div>
       </div>

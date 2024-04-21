@@ -1,4 +1,3 @@
-"use client"
 import React, { useEffect, useState } from 'react';
 import { Blog } from '@/types/blog';
 import Modal from 'react-modal';
@@ -10,11 +9,9 @@ interface BlogTableProps {
 
 const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentBlogs, setCurrentBlogs] = useState(blogs)
-  const [currentLink, setCurrentLink] = useState('')
-
+  const [currentBlogs, setCurrentBlogs] = useState(blogs);
+  const [currentLink, setCurrentLink] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
-
 
   const handleConfirm = () => {
     setModalOpen(false);
@@ -27,18 +24,16 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
 
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
 
-    const paginate = (pageNumber: number) => {
-        setCurrentPage(pageNumber);
-    };
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
-
-
-    useEffect(() => {
-        // Calculate start and end indices for the current page
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-        setCurrentBlogs(blogs.slice(startIndex, endIndex))
-    }, [currentPage])
+  useEffect(() => {
+    // Calculate start and end indices for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    setCurrentBlogs(blogs.slice(startIndex, endIndex));
+  }, [currentPage]);
 
   return (
     <div className="container mx-auto">
@@ -55,13 +50,16 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
               Date
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Area
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Link
             </th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-900">
           {currentBlogs.map((blog, index) => (
-            <tr key={`____${index}____${blog.id}___`}>
+            <tr key={`blog-${blog.id}`}>
               <td className="px-6 py-4 whitespace-nowrap">
                 <img
                   src={blog.coverImage}
@@ -79,11 +77,14 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
                   day: 'numeric',
                 })}
               </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {blog.area}
+              </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                 <a
                   onClick={() => {
-                    setCurrentLink(blog?.link)
-                    setModalOpen(true)
+                    setCurrentLink(blog.link);
+                    setModalOpen(true);
                   }}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -104,19 +105,18 @@ const BlogTable: React.FC<BlogTableProps> = ({ blogs, itemsPerPage }) => {
             key={i + 1}
             onClick={() => paginate(i + 1)}
             className={`mx-1 px-3 py-1 rounded ${
-              currentPage === i + 1
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700'
+              currentPage === i + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'
             }`}
           >
             {i + 1}
           </button>
         ))}
       </div>
+
       <Modal isOpen={modalOpen} style={customStyles}>
         <div>
           <p>Continue to a non-Department of State website?</p>
-          <div style={{ display: 'flex', marginTop: '20px'}}>
+          <div style={{ display: 'flex', marginTop: '20px' }}>
             <button
               onClick={handleCancel}
               style={{
@@ -165,7 +165,5 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    // width: '200px', // Adjust the width as needed
-    // height: '100px', // Adjust the height as needed
   },
 };

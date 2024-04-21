@@ -6,4 +6,5 @@ export type Blog = {
   coverImage?: string;
   date: string;
   link: string;
+  area?: string
 };

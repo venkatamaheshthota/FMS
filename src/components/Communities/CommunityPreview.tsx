@@ -18,6 +18,29 @@ export const areas: any = {
 const communityData: CommunityType[] = [
     {
         id: 0,
+        name: "Fernandina Beach",
+        area: areas.NORTH_WEST,
+        image: "/images/communities/fbeachCommunityWall.png",
+        description: "The Fernandina Beach Main Street Program kicked off in 2015 and was expanded in 2019. We’re part of the National Main Street Program that includes more than 1,200 communities – large and small, rural, and urban – in all 50 states. We all share the same goal: strengthening communities through preservation-based economic vitality in older and historic downtowns and neighborhood commercial districts.",
+        link: "https://www.fernandinamainstreet.com/",
+        mapLink: "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
+        poi: [
+            {
+              title: "Gocki's Restaurant & Retail",
+              line1: "Family-owned Restaurant and Retail Shop run by Malissa and Schel Collins.",
+              line2: "208 1st St NW, Havana, FL 32333",
+              link: "https://www.gockis.com/"
+            },
+            {
+              title: "Kellum's Furniture",
+              line1: "Family-owned Furniture Store located at",
+              line2: "106 N Main St, Havana, FL 32333.",
+              link: "https://kellumsfurniture.com/"
+            }
+          ]
+    },
+    {
+        id: 1,
         name: "Havana Main \nStreet",
         area: areas.NORTH_WEST,
         image: "/images/communities/havanacommunitywall.jpg",
@@ -39,7 +62,7 @@ const communityData: CommunityType[] = [
           ]
     },
     {
-        id: 1,
+        id: 2,
         name: "Quincy Main \nStreet",
         area: areas.NORTH_WEST,
         image: "/images/communities/quincyCommunitywall.png",
@@ -55,11 +78,12 @@ const communityData: CommunityType[] = [
 
     },
     {
-        id: 2,
+        id: 3,
         name: "Chattohoochee Main \nStreet",
         area: areas.NORTH_WEST,
         image: "/images/communities/chtcommunitywall.png",
         link: "https://www.chattahoocheemainstreet.org/",
+        mapLink:"https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
         poi: [
             {
               title: "Tootie-Pies",
