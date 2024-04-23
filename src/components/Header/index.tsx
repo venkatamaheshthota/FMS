@@ -121,7 +121,7 @@ const Header = () => {
                               target="_blank"
                               scroll={false}
                               href={menuItem.path}
-                              className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-dark dark:text-dark dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-2  ${pathUrl === menuItem?.path && "text-white"
+                              className={`ud-menu-scroll flex py-2 text-base text-primary group-hover:text-primary dark:text-primary dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-2  ${true && "text-white"
                                 }`}
                             >
                               {menuItem.title}
@@ -132,12 +132,12 @@ const Header = () => {
                               scroll={false}
                               href={menuItem.path}
                               className={`ud-menu-scroll flex py-2 text-base lg:inline-flex lg:px-0 lg:py-2 ${sticky
-                                  ? "text-dark group-hover:text-dark dark:text-white dark:group-hover:text-dark"
-                                  : "text-body-color dark:text-dark lg:text-white"
+                                  ? "text-white group-hover:text-primary dark:text-white dark:group-hover:text-primary"
+                                  : "text-body-color dark:text-primary lg:text-white"
                                 } ${pathUrl === menuItem?.path &&
-                                sticky &&
-                                "text-white"
-                                }`}
+                                  sticky &&
+                                  "text-primary"
+                                  }`}
                             >
                               {menuItem.title}
                             </Link>
