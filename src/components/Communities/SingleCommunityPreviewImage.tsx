@@ -69,7 +69,7 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
       <div className="w-full grid grid-cols-2 gap-4 mt-8">
         <div className="col-span-1 h-96 ">
 
-          <AccordionComponent data={poi} />
+          {/* <AccordionComponent data={poi} /> */}
         </div>
         <div className="col-span-1 h-96 bg-gray-200 rounded-lg shadow-lg">
           {/* <p>Map goes here</p> */}
@@ -83,100 +83,100 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
 };
 
 export default SingleCommunityPreviewImage;
-const AccordionComponent = ({ data }) => {
-  const accordionItemStyle = {
-    backgroundColor: '#81b583', // Background color for the AccordionSummary
-    color: 'white', // Text color for the AccordionSummary
-    fontWeight: 'bold', // Font weight for the AccordionSummary text
-  };
+// const AccordionComponent = ({ data }) => {
+//   const accordionItemStyle = {
+//     backgroundColor: '#81b583', // Background color for the AccordionSummary
+//     color: 'white', // Text color for the AccordionSummary
+//     fontWeight: 'bold', // Font weight for the AccordionSummary text
+//   };
 
-  return (
-    <div>
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Point of Interest</h2>
-      <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-          style={accordionItemStyle} // Apply custom styles to AccordionSummary
-        >
-          <Typography>{data[0].title}</Typography>
-        </AccordionSummary>
+//   return (
+//     <div>
+//       <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Point of Interest</h2>
+//       <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
+//         <AccordionSummary
+//           expandIcon={<ExpandMoreIcon />}
+//           aria-controls="panel1-content"
+//           id="panel1-header"
+//           style={accordionItemStyle} // Apply custom styles to AccordionSummary
+//         >
+//           <Typography>{data[0].title}</Typography>
+//         </AccordionSummary>
 
-        {/* line 1 */}
-        <AccordionDetails>
-          <Typography>
-            {data[0].line1}
-          </Typography>
-        </AccordionDetails>
+//         {/* line 1 */}
+//         <AccordionDetails>
+//           <Typography>
+//             {data[0].line1}
+//           </Typography>
+//         </AccordionDetails>
 
-        {/* line 2 */}
+//         {/* line 2 */}
 
-        {data[0].line2 &&
-          <AccordionDetails>
-            <Typography>
-              {data[0].line2}
-            </Typography>
-          </AccordionDetails>}
+//         {data[0].line2 &&
+//           <AccordionDetails>
+//             <Typography>
+//               {data[0].line2}
+//             </Typography>
+//           </AccordionDetails>}
 
-        {/* link */}
+//         {/* link */}
 
-        {data[0].link &&
-          <AccordionDetails>
-            <p className="text-sm mt-4">
-              <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
-                <a href={data[0].link} target="_blank" rel="noopener noreferrer">
-                  View website
-                </a>
-              </span>
-            </p>
-          </AccordionDetails>
-        }
+//         {data[0].link &&
+//           <AccordionDetails>
+//             <p className="text-sm mt-4">
+//               <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
+//                 <a href={data[0].link} target="_blank" rel="noopener noreferrer">
+//                   View website
+//                 </a>
+//               </span>
+//             </p>
+//           </AccordionDetails>
+//         }
 
-      </Accordion>
+//       </Accordion>
 
-      {data[1] && <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-          style={accordionItemStyle} // Apply custom styles to AccordionSummary
-        >
-          <Typography>{data[1].title}</Typography>
-        </AccordionSummary>
+//       {data[1] && <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
+//         <AccordionSummary
+//           expandIcon={<ExpandMoreIcon />}
+//           aria-controls="panel1-content"
+//           id="panel1-header"
+//           style={accordionItemStyle} // Apply custom styles to AccordionSummary
+//         >
+//           <Typography>{data[1].title}</Typography>
+//         </AccordionSummary>
 
-        {/* line 1 */}
-        <AccordionDetails>
-          <Typography>
-            {data[1].line1}
-          </Typography>
-        </AccordionDetails>
+//         {/* line 1 */}
+//         <AccordionDetails>
+//           <Typography>
+//             {data[1].line1}
+//           </Typography>
+//         </AccordionDetails>
 
-        {/* line 2 */}
+//         {/* line 2 */}
 
-        {data[1].line2 &&
-          <AccordionDetails>
-            <Typography>
-              {data[1].line2}
-            </Typography>
-          </AccordionDetails>}
+//         {data[1].line2 &&
+//           <AccordionDetails>
+//             <Typography>
+//               {data[1].line2}
+//             </Typography>
+//           </AccordionDetails>}
 
-        {/* link */}
+//         {/* link */}
 
-        {data[1].link &&
-          <AccordionDetails>
-            <p className="text-sm mt-4">
-              <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
-                <a href={data[1].link} target="_blank" rel="noopener noreferrer">
-                  View website
-                </a>
-              </span>
-            </p>
-          </AccordionDetails>
-        }
+//         {data[1].link &&
+//           <AccordionDetails>
+//             <p className="text-sm mt-4">
+//               <span className="text-black font-medium cursor-pointer hover:bg-black hover:text-white p-1 rounded">
+//                 <a href={data[1].link} target="_blank" rel="noopener noreferrer">
+//                   View website
+//                 </a>
+//               </span>
+//             </p>
+//           </AccordionDetails>
+//         }
 
-      </Accordion>}
-    </div>
-  );
-};
+//       </Accordion>}
+//     </div>
+//   );
+// };
 

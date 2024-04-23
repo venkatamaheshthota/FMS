@@ -7,4 +7,5 @@ export type Blog = {
   date: string;
   link: string;
   area?: string
+  time?: string
 };

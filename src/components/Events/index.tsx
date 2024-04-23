@@ -1,15 +1,14 @@
 "use client"
 import React, { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import HomeBlogData from "@/app/homeBlogData";
 import BlogTable from "./BlogTable";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-
+import eventsData from "@/app/eventsData";
+import EventsTable from "./EventsTable";
 
 const Events = () => {
-  const mockData = [...HomeBlogData, ...HomeBlogData, ...HomeBlogData];
-  const [sortedPosts, setSortedPosts] = useState([...mockData]);
+  const [sortedPosts, setSortedPosts] = useState([...eventsData]);
   const [sortByName, setSortByName] = useState(false);
   const [sortByDate, setSortByDate] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +17,7 @@ const Events = () => {
     setIsLoading(true);
     const sortedPostsCopy = [...sortedPosts];
     sortedPostsCopy.sort((a, b) =>
-      sortByName ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title)
+      sortByName ? b.EventName.localeCompare(a.EventName) : a.EventName.localeCompare(b.EventName)
     );
     await simulateSortingDelay(); // Simulate sorting delay
     setSortedPosts(sortedPostsCopy);
@@ -31,7 +30,7 @@ const Events = () => {
     setIsLoading(true);
     const sortedPostsCopy = [...sortedPosts];
     sortedPostsCopy.sort((a, b) =>
-      sortByDate ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)
+      sortByDate ? new Date(b.Date) - new Date(a.Date) : new Date(a.Date) - new Date(b.Date)
     );
     await simulateSortingDelay(); // Simulate sorting delay
     setSortedPosts(sortedPostsCopy);
@@ -63,7 +62,7 @@ const Events = () => {
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
             >
               Sort by Date
-              {sortByDate && <span style={{ position: 'absolute', top: '-5px', right: '-5px', width: '10px', height: '10px', backgroundColor: 'red', borderRadius: '50%', display: 'inline-block' }}></span>}
+              {sortByDate && <span className="sort-indicator"></span>}
             </button>
             <button
               style={{ backgroundColor: '#81b583', position: 'relative' }}
@@ -71,7 +70,7 @@ const Events = () => {
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
             >
               Sort by Name
-              {sortByName && <span style={{ position: 'absolute', top: '-5px', right: '-5px', width: '10px', height: '10px', backgroundColor: 'red', borderRadius: '50%', display: 'inline-block' }}></span>}
+              {sortByName && <span className="sort-indicator"></span>}
             </button>
           </div>
         </div>
@@ -83,7 +82,7 @@ const Events = () => {
               </Box>
             </div>
           ) : (
-            <BlogTable blogs={sortedPosts} itemsPerPage={5} />
+            <EventsTable events={sortedPosts} itemsPerPage={5} />
           )}
         </div>
       </div>
