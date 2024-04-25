@@ -2,21 +2,21 @@ import { Blog } from "../types/blog";
 
 const HomeBlogData: Blog[] = [
   {
-    title: 'Arts and Craft bazar',
-    date: '2024-04-09T00:00:00.000Z',
-    excerpt: "Come one, come all to our Havana Arts and Crafts Bazaar, where local artisans & crafters come together to showcase their unique creations in beautiful downtown Havana.",
+    title: 'SPRING STUART STROLL',
+    date: '2024-05-09T00:00:00.000Z',
+    excerpt: "Join us for our annual Spring Stuart Stroll in Historic Downtown Stuart! Sip, sample light bites, and stroll historic downtown Stuart while you shop and explore! And earn a chance to win one of four gift certificates!",
     coverImage: '/images/blog/blog-01.png',
     slug: 'bootstrap-templates',
-    link: 'https://www.havanamainstreet.com/artsandcraftsbazaar',
+    link: 'https://www.stuartmainstreet.org/events/stuart-stroll/',
     area: "North East"
   },
   {
-    title: "Havana Quincy Plein Air Painting",
-    date: '2024-03-18T00:00:00.000Z',
-    excerpt: "April 27th, 2024, 7p-10p \nGeneral Admission Tickets $30 \nPremium Center Stage front Tickets $40",
+    title: "Shrimp Festival",
+    date: '2024-05-18T00:00:00.000Z',
+    excerpt: "As people from Northeast Florida and Southeast Georgia come to Amelia Island for the Isle of Eight Flags Shrimp Festival this weekend, they know one thing: There will be plenty of shrimp to eat. ",
     coverImage: '/images/blog/blog-02.png',
     slug: 'blog-example-with-mdx-file',
-    link: 'https://www.quincymainstreet.org/calendar/havana-quincy-plein-air-painting/',
+    link: 'https://www.shrimpfestival.com/festival-hours/',
     area: "North East"
 
   },
