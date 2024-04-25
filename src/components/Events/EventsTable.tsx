@@ -18,7 +18,7 @@ const EventsTable: React.FC<EventsTableProps> = ({ events, itemsPerPage }) => {
     const [day, month, year] = dateStr.split('/'); // Split date string into components
     
     const formattedDate = new Date(`${month}-${day}-${year}`); // Construct date in year-month-day format
-    return formattedDate.toDateString();
+    return formattedDate.toLocaleDateString()
   };
   
 
