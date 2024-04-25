@@ -15,18 +15,27 @@ const EventsTable: React.FC<EventsTableProps> = ({ events, itemsPerPage }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const formatDate = (dateStr) => {
-    const [day, month, year] = dateStr.split('/'); // Split date string into components
-    
-    const formattedDate = new Date(`${month}-${day}-${year}`); // Construct date in year-month-day format
-    
-    // if (isNaN(formattedDate)) {
-    //   return 'Invalid Date'; // Return default message if date is invalid
-    // }
-
-    // Format the valid date into the desired display format
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return formattedDate.toLocaleDateString('en-US', options);
+    try {
+      // Split date string into components assuming "month/day/year" format
+      const [month, day, year] = dateStr.split('/').map(part => parseInt(part)); 
+  
+      // Check if components are valid numbers
+      if (isNaN(month) || isNaN(day) || isNaN(year)) {
+        throw new Error('Invalid date components');
+      }
+  
+      // Construct a new date in year-month-day format (Note: month is 0-indexed in JavaScript)
+      const formattedDate = new Date(year, month - 1, day); 
+  
+      // Format the valid date into the desired display format
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return formattedDate.toLocaleDateString('en-US', options);
+    } catch (error) {
+      console.error('Error formatting date:', error.message);
+      return 'Invalid Date'; // Return default message if date is invalid
+    }
   };
+  
   
 
   const handleConfirm = () => {
