@@ -1,19 +1,13 @@
 "use client"
 import { CommunityType } from "@/types/communityType";
 import Image from "next/image";
-import Accordion from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Button from '@mui/material/Button';
-import { Typography } from "@mui/material";
+
 
 
 const DEFAULT_MAP_LINK = "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F" // florida mainstreet
 
 const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }) => {
-  const { image, name, area, description, link, poi, mapLink = DEFAULT_MAP_LINK } = community;
+  const { image, name, area, description, link, business, mapLink = DEFAULT_MAP_LINK } = community;
 
   const handleLinkClick = () => {
     if (link) {
@@ -65,16 +59,26 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
           </div>
         </div>
       </div>
-
       <div className="w-full grid grid-cols-2 gap-4 mt-8">
-        <div className="col-span-1 h-96 ">
-
-          {/* <AccordionComponent data={poi} /> */}
+        {/* Column 1: BusinessTable */}
+        <div className="col-span-1 flex">
+          <div className="w-full">
+            <div className="h-96 overflow-y-auto bg-white rounded-lg shadow-lg p-4">
+              {business?.length > 0 ? (
+                <BusinessTable businesses={business} />
+              ) : (
+                <p className="text-gray-500">No businesses to display.</p>
+              )}
+            </div>
+          </div>
         </div>
-        <div className="col-span-1 h-96 bg-gray-200 rounded-lg shadow-lg">
-          {/* <p>Map goes here</p> */}
-          <div className="mb-[60px]">
-            <iframe src={mapLink} width="100%" height="400"></iframe>
+
+        {/* Column 2: Map iframe */}
+        <div className="col-span-1 flex">
+          <div className="w-full bg-gray-200 rounded-lg shadow-lg">
+            <div className="p-4 h-96">
+              <iframe src={mapLink} title="Map" width="100%" height="100%" frameBorder="0"></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -83,6 +87,61 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
 };
 
 export default SingleCommunityPreviewImage;
+
+const BusinessTable = ({ businesses }) => {
+  const handleBusinessClick = (link) => {
+    if (link) {
+      window.open(link, "_blank");
+    }
+  };
+
+  return (
+    <div>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">List of Business</h2>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50 dark:bg-gray-800">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Name
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Type
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Description
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Address
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-900">
+          {businesses.map((business) => (
+            <tr
+              key={business.name}
+              className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
+              onClick={() => handleBusinessClick(business.link)}
+            >
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                {business.name}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {business.type}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {business.desc}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {business.address.street}, {business.address.city}, {business.address.zip}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
 // const AccordionComponent = ({ data }) => {
 //   const accordionItemStyle = {
 //     backgroundColor: '#81b583', // Background color for the AccordionSummary
@@ -92,7 +151,7 @@ export default SingleCommunityPreviewImage;
 
 //   return (
 //     <div>
-//       <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Point of Interest</h2>
+//       <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">List of Business</h2>
 //       <Accordion style={{ backgroundColor: '#ffffff', marginBottom: '8px' }}>
 //         <AccordionSummary
 //           expandIcon={<ExpandMoreIcon />}

@@ -24,20 +24,28 @@ const communityData: CommunityType[] = [
         description: "The Fernandina Beach Main Street Program kicked off in 2015 and was expanded in 2019. We’re part of the National Main Street Program that includes more than 1,200 communities – large and small, rural, and urban – in all 50 states. We all share the same goal: strengthening communities through preservation-based economic vitality in older and historic downtowns and neighborhood commercial districts.",
         link: "https://www.fernandinamainstreet.com/",
         mapLink: "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
-        poi: [
+        business: [
             {
-              title: "Gocki's Restaurant & Retail",
-              line1: "Family-owned Restaurant and Retail Shop run by Malissa and Schel Collins.",
-              line2: "208 1st St NW, Havana, FL 32333",
-              link: "https://www.gockis.com/"
+            name: "The Addison on Amelia Island",
+            type: "Lodging",
+            desc: "Bed & breakfast",
+            address: {
+              street: "614 Ash Street",
+              city: "Fernandina Beach, FL",
+              zip: "32034",
             },
-            {
-              title: "Kellum's Furniture",
-              line1: "Family-owned Furniture Store located at",
-              line2: "106 N Main St, Havana, FL 32333.",
-              link: "https://kellumsfurniture.com/"
-            }
-          ]
+          },
+          {
+            name: "Atlantic Hair Studio",
+            type: "Retail",
+            desc: "Hair salon",
+            address: {
+              street: "302 S 8th St",
+              city: "Fernandina Beach, FL",
+              zip: "32034",
+            },
+          }
+        ]
     },
     {
         id: 1,
@@ -46,20 +54,29 @@ const communityData: CommunityType[] = [
         image: "/images/communities/havanacommunitywall.jpg",
         description: "Havana Main Street has existed for over 100 years. However, it was only in 2017 that the community gained Main Street designation from the Florida Main Street Program. We intend to use this momentum to help revitalize our downtown, enriching quality of life, business, and tourism while preserving the historic foundation we inherited. We want our downtown visitors to experience fun and excitement and to tell their friends they must go see Havana. ",
         link: " https://www.havanamainstreet.com",
-        poi: [
+        business: [
             {
-              title: "Gocki's Restaurant & Retail",
-              line1: "Family-owned Restaurant and Retail Shop run by Malissa and Schel Collins.",
-              line2: "208 1st St NW, Havana, FL 32333",
-              link: "https://www.gockis.com/"
+            name: "Weekend Finds",
+            type: "Retail",
+            desc: "Gift shop",
+            address: {
+              street: "212 N. Main St.",
+              city: "Havana, FL",
+              zip: "32333",
             },
-            {
-              title: "Kellum's Furniture",
-              line1: "Family-owned Furniture Store located at",
-              line2: "106 N Main St, Havana, FL 32333.",
-              link: "https://kellumsfurniture.com/"
-            }
-          ]
+          },
+          {
+            name: "Subway",
+            type: "Restaurant",
+            desc: "Sandwich shop",
+            address: {
+              street: "102 8th Ave. E",
+              city: "Havana, FL",
+              zip: "32333",
+            },
+          }
+        ]
+
     },
     {
         id: 2,
@@ -67,15 +84,29 @@ const communityData: CommunityType[] = [
         area: areas.NORTH_WEST,
         image: "/images/communities/quincyCommunitywall.png",
         link: "https://www.quincymainstreet.org/",
-        poi: [
-            {
-              title: "Gocki's Restaurant & Retail",
-              line1: "Historical Quincy Courthouse",
-              line2: "10 East Jefferson Street",
-            //   link: "https://www.gockis.com/"
-            }
-          ]
 
+        business: [
+            {
+            name: "Big Papa's Chophouse",
+            type: "Restaurant",
+            desc: "Steak house",
+            address: {
+              street: "18 N. Adams St.",
+              city: "Quincy, FL ",
+              zip: "32351",
+            },
+          },
+          {
+            name: "Regional Therapy Services Inc",
+            type: "Health",
+            desc: "Physical therapy clinic",
+            address: {
+              street: "108 N. Adams St.",
+              city: "Quincy, FL ",
+              zip: "32351",
+            },
+          }
+        ]
     },
     {
         id: 3,
@@ -84,20 +115,38 @@ const communityData: CommunityType[] = [
         image: "/images/communities/chtcommunitywall.png",
         link: "https://www.chattahoocheemainstreet.org/",
         mapLink:"https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
-        poi: [
+        business: [
             {
-              title: "Tootie-Pies",
-              line1: "Welcome to Tootie-Pies LLC. Tootie-Pies is a gift shop that was original located in Sneads, Fl. We have recently moved to our new location in Chattahoochee, Fl on Mainstreet. Since our move we have add a lot of new inventory. \n Visit the shop at 308 W. Washington St., Chattahoochee, FL or on Facebook.",
-              line2: "308 W. Washington St., Chattahoochee, FL",
-              link: "https://www.facebook.com/tootiepies1517"
+            name: "Pippin's Tire & Auto Services",
+            type: "Automotive",
+            desc: "Tire & auto mechanic shop",
+            address: {
+              street: "616 W Washington St",
+              city: "Chattahoochee, FL",
+              zip: "32324",
             },
-            {
-              title: "Twin City Brewery",
-              line1: "Great selection of local, domestic, and craft beer as well as a full menu of delicious food! Check them out on Facebook or call 850-663-2120. 408 W Washington St. Chattahoochee, Florida 32324",
-              line2: "408 W Washington St. Chattahoochee, Florida 32324",
-              link: "https://www.facebook.com/people/Twin-City-Brewery/100086655570352/?mibextid=ZbWKwL"
-            }
-          ]
+          },
+          {
+            name: "Bleachers & Blayke's Billiards",
+            type: "Restaurant",
+            desc: "Restaurant",
+            address: {
+              street: "418 W Washington St",
+              city: "Chattahoochee, FL",
+              zip: "32324",
+            },
+          }
+        ]
+    },
+    {
+        id: 4,
+        name: "Stuart Main \nStreet",
+        description: "Stuart Main Street is a 501c3 private nonprofit organization that has been serving our historic district for more than 35 years. Stuart Main Street is a nationally accredited organization under the Main Street America banner belonging to a network of more than 1,200 other main street programs across the country. Stuart Main Street uses the Main Street America Four Point Approach to create and promote a positive downtown experience for residents, businesses and visitors through community driven revitalization and economic development efforts.",
+        area: areas.NORTH_WEST,
+        image: "/images/communities/strtcommunitywall.png",
+        link: "https://www.stuartmainstreet.org/events/stuart-stroll/",
+        mapLink:"https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
+        business: []
     },
 ];
 

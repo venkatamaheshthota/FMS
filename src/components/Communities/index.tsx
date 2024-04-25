@@ -12,6 +12,7 @@ export const areas: any = {
 };
 
 const communityData: CommunityType[] = [
+  
   {
     id: 0,
     name: "Fernandina Beach",
@@ -38,6 +39,13 @@ const communityData: CommunityType[] = [
     name: "Chattohoochee Main \nStreet",
     area: areas.NORTH_WEST,
     image: "/images/communities/chtcommunity.png",
+
+  },
+  {
+    id: 4,
+    name: "Stuart Main Street",
+    area: areas.NORTH_WEST,
+    image: "/images/communities/strtCommunity.png",
 
   },
 ];
