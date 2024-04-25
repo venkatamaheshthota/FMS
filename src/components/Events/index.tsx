@@ -16,30 +16,37 @@ const Events = () => {
   const handleSortByName = async () => {
     setIsLoading(true);
     const sortedPostsCopy = [...sortedPosts];
+    const newSortByName = !sortByName; // Toggle sort by name
+
     sortedPostsCopy.sort((a, b) =>
-      sortByName ? b.EventName.localeCompare(a.EventName) : a.EventName.localeCompare(b.EventName)
+      newSortByName ? a.EventName.localeCompare(b.EventName) : b.EventName.localeCompare(a.EventName)
     );
-    await simulateSortingDelay(); // Simulate sorting delay
+
+    await simulateSortingDelay();
     setSortedPosts(sortedPostsCopy);
-    setSortByName(!sortByName);
-    setSortByDate(false); // Reset other sort flag
+    setSortByName(newSortByName);
+    setSortByDate(false); // Reset date sorting
     setIsLoading(false);
   };
 
   const handleSortByDate = async () => {
     setIsLoading(true);
     const sortedPostsCopy = [...sortedPosts];
-    sortedPostsCopy.sort((a, b) =>
-      sortByDate ? new Date(b.Date) - new Date(a.Date) : new Date(a.Date) - new Date(b.Date)
-    );
-    await simulateSortingDelay(); // Simulate sorting delay
+    const newSortByDate = !sortByDate; // Toggle sort by date
+
+    sortedPostsCopy.sort((a, b) => {
+      const dateA = new Date(a.Date);
+      const dateB = new Date(b.Date);
+      return newSortByDate ? dateA - dateB : dateB - dateA;
+    });
+
+    await simulateSortingDelay();
     setSortedPosts(sortedPostsCopy);
-    setSortByDate(!sortByDate);
-    setSortByName(false); // Reset other sort flag
+    setSortByDate(newSortByDate);
+    setSortByName(false); // Reset name sorting
     setIsLoading(false);
   };
 
-  // Simulate sorting delay (replace with actual sorting logic)
   const simulateSortingDelay = () => {
     return new Promise((resolve) => setTimeout(resolve, 100));
   };
