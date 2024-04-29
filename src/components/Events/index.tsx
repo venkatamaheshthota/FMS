@@ -52,7 +52,7 @@ const Events = () => {
   };
 
   return (
-    <section className="dark:bg-dark bg-white pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
+    <section style={{marginTop: '5%'}} className="dark:bg-dark bg-white pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
       <div className="container mx-auto">
         <SectionTitle
           subtitle="All Events"

@@ -83,7 +83,7 @@ const Header = () => {
                   onClick={navbarToggleHandler}
                   id="navbarToggler"
                   aria-label="Mobile Menu"
-                  className="absolute left-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 visible"
+                  className="absolute left-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-green focus:ring-2 visible"
                 >
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[7px] rotate-45" : " "
@@ -232,6 +232,18 @@ const Header = () => {
                 >
                   {pathUrl !== "/" ? (
                     <>
+                      <Image
+                        src={`${"/images/logo/florida_logo_orange.png"}`}
+                        // src={`${sticky
+                        //     ? "/images/logo/florida_logo.png"
+                        //     : "/images/logo/florida_logo_orange.png"
+                        //   }`}
+                        alt="logo"
+                        width={140}
+                        height={30}
+                        style={{ marginLeft: 50 }}
+                        className="header-logo w-full dark:hidden"
+                      />
                       {/* <Image
                         src={`/images/logo/florida_logo_orange.png`}
                         alt="logo"
