@@ -5,6 +5,7 @@ export type CommunityType = {
   area?: string;
   description?: string;
   link?: string;
+  events?: []
   business?: {
     name: string;
     type: string;

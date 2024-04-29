@@ -59,27 +59,23 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
           </div>
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 gap-4 mt-8">
-        {/* Column 1: BusinessTable */}
-        <div className="col-span-1 flex">
-          <div className="w-full">
-            <div className="h-96 overflow-y-auto bg-white rounded-lg shadow-lg p-4">
-              {business?.length > 0 ? (
-                <BusinessTable businesses={business} />
-              ) : (
-                <p className="text-gray-500">No businesses to display.</p>
-              )}
-            </div>
-          </div>
-        </div>
 
-        {/* Column 2: Map iframe */}
-        <div className="col-span-1 flex">
-          <div className="w-full bg-gray-200 rounded-lg shadow-lg">
-            <div className="p-4 h-96">
-              <iframe src={mapLink} title="Map" width="100%" height="100%" frameBorder="0"></iframe>
-            </div>
-          </div>
+      {/* Map iframe */}
+
+      <div style={{ marginTop: '2%' }} className="w-full bg-gray-200 rounded-lg shadow-lg">
+        <div className="p-4 h-96">
+          <iframe src={mapLink} title="Map" width="100%" height="100%" frameBorder="0"></iframe>
+        </div>
+      </div>
+
+      {/* BusinessTable */}
+      <div style={{ marginTop: '2%' }} className="w-full">
+        <div className="h-96 overflow-y-auto bg-white rounded-lg shadow-lg p-4">
+          {business?.length > 0 ? (
+            <BusinessTable businesses={business} />
+          ) : (
+            <p className="text-gray-500">No businesses to display.</p>
+          )}
         </div>
       </div>
     </>
@@ -139,8 +135,7 @@ const BusinessTable = ({ businesses }) => {
         </tbody>
       </table>
     </div>
-  );
-};
+  );}
 
 // const AccordionComponent = ({ data }) => {
 //   const accordionItemStyle = {
