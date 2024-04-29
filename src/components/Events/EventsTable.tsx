@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { Event } from '@/types/events';
+import { format } from 'date-fns';
 
 interface EventsTableProps {
   events: Event[];
@@ -81,7 +82,7 @@ const EventsTable: React.FC<EventsTableProps> = ({ events, itemsPerPage }) => {
               </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {/* Parse the date string in day/month/year format */}
-                      {formatDate(event.Date)}
+                      {format(new Date(event.Date), "dd MMM yyyy")}
                   </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 {event.Location ?? '-'}

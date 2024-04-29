@@ -33,20 +33,20 @@ const Events = () => {
     setIsLoading(true);
     const sortedPostsCopy = [...sortedPosts];
     const newSortByDate = !sortByDate; // Toggle sort by date
-
+  
     sortedPostsCopy.sort((a, b) => {
       const dateA = new Date(a.Date);
       const dateB = new Date(b.Date);
-      return newSortByDate ? dateA - dateB : dateB - dateA;
+      return newSortByDate ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
     });
-
+  
     await simulateSortingDelay();
     setSortedPosts(sortedPostsCopy);
     setSortByDate(newSortByDate);
     setSortByName(false); // Reset name sorting
     setIsLoading(false);
   };
-
+  
   const simulateSortingDelay = () => {
     return new Promise((resolve) => setTimeout(resolve, 100));
   };
