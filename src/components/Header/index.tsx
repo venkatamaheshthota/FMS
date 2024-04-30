@@ -87,26 +87,28 @@ const Header = () => {
                 >
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[7px] rotate-45" : " "
-                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
+                      } ${true} 
+                      ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
-                        : "bg-white"
-                      }`}
+                        : "bg-white"}`
+                    }
                   />
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? "opacity-0 " : " "
-                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
+                      } ${true} ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
                         : "bg-white"
                       }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[-8px] -rotate-45" : " "
-                      } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
+                    className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[-8px] -rotate-45" : " text-green-500"
+                      } ${true} ${pathUrl === "/" && sticky
                         ? "bg-white dark:bg-white"
-                        : "bg-white"
+                        : "bg-white "
                       }`}
                   />
                 </button>
+
                 <nav
                   id="navbarCollapse"
                   className={`navbar absolute left-0 z-30 w-[250px] mt-5 ml-5 lg:w-[250px] rounded border-[.5px] border-body-color/50 ${theme === "dark" ? 'bg-white' : 'bg-dark'} px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark-2 ${navbarOpen ? "visible opacity-100" : "invisible opacity-0"
