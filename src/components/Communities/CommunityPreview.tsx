@@ -26,25 +26,25 @@ const communityData: CommunityType[] = [
         mapLink: "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
         business: [
             {
-            name: "The Addison on Amelia Island",
-            type: "Lodging",
-            desc: "Bed & breakfast",
-            address: {
-              street: "614 Ash Street",
-              city: "Fernandina Beach, FL",
-              zip: "32034",
+                name: "The Addison on Amelia Island",
+                type: "Lodging",
+                desc: "Bed & breakfast",
+                address: {
+                    street: "614 Ash Street",
+                    city: "Fernandina Beach, FL",
+                    zip: "32034",
+                },
             },
-          },
-          {
-            name: "Atlantic Hair Studio",
-            type: "Retail",
-            desc: "Hair salon",
-            address: {
-              street: "302 S 8th St",
-              city: "Fernandina Beach, FL",
-              zip: "32034",
-            },
-          }
+            {
+                name: "Atlantic Hair Studio",
+                type: "Retail",
+                desc: "Hair salon",
+                address: {
+                    street: "302 S 8th St",
+                    city: "Fernandina Beach, FL",
+                    zip: "32034",
+                },
+            }
         ]
     },
     {
@@ -56,25 +56,25 @@ const communityData: CommunityType[] = [
         link: " https://www.havanamainstreet.com",
         business: [
             {
-            name: "Weekend Finds",
-            type: "Retail",
-            desc: "Gift shop",
-            address: {
-              street: "212 N. Main St.",
-              city: "Havana, FL",
-              zip: "32333",
+                name: "Weekend Finds",
+                type: "Retail",
+                desc: "Gift shop",
+                address: {
+                    street: "212 N. Main St.",
+                    city: "Havana, FL",
+                    zip: "32333",
+                },
             },
-          },
-          {
-            name: "Subway",
-            type: "Restaurant",
-            desc: "Sandwich shop",
-            address: {
-              street: "102 8th Ave. E",
-              city: "Havana, FL",
-              zip: "32333",
-            },
-          }
+            {
+                name: "Subway",
+                type: "Restaurant",
+                desc: "Sandwich shop",
+                address: {
+                    street: "102 8th Ave. E",
+                    city: "Havana, FL",
+                    zip: "32333",
+                },
+            }
         ]
 
     },
@@ -84,28 +84,28 @@ const communityData: CommunityType[] = [
         area: areas.NORTH_WEST,
         image: "/images/communities/quincyCommunitywall.png",
         link: "https://www.quincymainstreet.org/",
-
+        description: "In the heart of Gadsden County lies Quincy, a nearly 200-year-old community that embraces its historic yesterday to help forge a prosperous tomorrow. Once known as the home of the largest concentration of millionaires in the United States, it is now known for its wonderful food, beautiful courthouse square, and Porchfest, a festival highlighting dozens of local musical talents in a relaxed casual environment that allows for one to see all the amenities that makes Quincy great. Quincy Main Street has been leading the revitalization efforts of this district since 1987.",
         business: [
             {
-            name: "Big Papa's Chophouse",
-            type: "Restaurant",
-            desc: "Steak house",
-            address: {
-              street: "18 N. Adams St.",
-              city: "Quincy, FL ",
-              zip: "32351",
+                name: "Big Papa's Chophouse",
+                type: "Restaurant",
+                desc: "Steak house",
+                address: {
+                    street: "18 N. Adams St.",
+                    city: "Quincy, FL ",
+                    zip: "32351",
+                },
             },
-          },
-          {
-            name: "Regional Therapy Services Inc",
-            type: "Health",
-            desc: "Physical therapy clinic",
-            address: {
-              street: "108 N. Adams St.",
-              city: "Quincy, FL ",
-              zip: "32351",
-            },
-          }
+            {
+                name: "Regional Therapy Services Inc",
+                type: "Health",
+                desc: "Physical therapy clinic",
+                address: {
+                    street: "108 N. Adams St.",
+                    city: "Quincy, FL ",
+                    zip: "32351",
+                },
+            }
         ]
     },
     {
@@ -114,28 +114,29 @@ const communityData: CommunityType[] = [
         area: areas.NORTH_WEST,
         image: "/images/communities/chtcommunitywall.png",
         link: "https://www.chattahoocheemainstreet.org/",
-        mapLink:"https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
+        mapLink: "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
+        description: "Nestled along the Apalachicola River, Chattahoochee has long been a community that embraces the potential of the outdoors. Whether it is fishing, hiking, biking, or camping, Chattahoochee is a destination for sportsmen from all walks of life. While it has been a draw for athletes and recreational enthusiasts, Chattahoochee Main Street has been working diligently to provide the opportunity for visitors to stroll leisurely among boutiques, shops, and restaurants since 2013. ",
         business: [
             {
-            name: "Pippin's Tire & Auto Services",
-            type: "Automotive",
-            desc: "Tire & auto mechanic shop",
-            address: {
-              street: "616 W Washington St",
-              city: "Chattahoochee, FL",
-              zip: "32324",
+                name: "Pippin's Tire & Auto Services",
+                type: "Automotive",
+                desc: "Tire & auto mechanic shop",
+                address: {
+                    street: "616 W Washington St",
+                    city: "Chattahoochee, FL",
+                    zip: "32324",
+                },
             },
-          },
-          {
-            name: "Bleachers & Blayke's Billiards",
-            type: "Restaurant",
-            desc: "Restaurant",
-            address: {
-              street: "418 W Washington St",
-              city: "Chattahoochee, FL",
-              zip: "32324",
-            },
-          }
+            {
+                name: "Bleachers & Blayke's Billiards",
+                type: "Restaurant",
+                desc: "Restaurant",
+                address: {
+                    street: "418 W Washington St",
+                    city: "Chattahoochee, FL",
+                    zip: "32324",
+                },
+            }
         ]
     },
     {
@@ -145,7 +146,7 @@ const communityData: CommunityType[] = [
         area: areas.NORTH_WEST,
         image: "/images/communities/strtcommunitywall.png",
         link: "https://www.stuartmainstreet.org/events/stuart-stroll/",
-        mapLink:"https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
+        mapLink: "https://www.google.com/maps/d/embed?mid=1-mlRhwQ83a0KaT-WkG4bFtWjLBwJ86E&ehbc=2E312F",
         business: []
     },
 ];
