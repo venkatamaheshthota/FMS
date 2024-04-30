@@ -27,8 +27,8 @@ export default function Home() {
     <main>
       <ScrollUp />
       <Hero />
-      <Pricing />
       <MainStreet/>
+      <Pricing />
       <HomeBlogSection posts={posts} />
       {/* <Features /> */}
       {/* <About /> */}
