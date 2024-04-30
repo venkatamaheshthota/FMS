@@ -13,6 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import { getAllPosts } from "@/utils/markdown";
 import { Metadata } from "next";
 import HomeBlogData from "./homeBlogData";
+import MainStreet from "@/components/MainStreet";
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <Pricing />
+      <MainStreet/>
       <HomeBlogSection posts={posts} />
       {/* <Features /> */}
       {/* <About /> */}
