@@ -3,17 +3,25 @@ import { useRouter } from "next/navigation";
 import SectionTitle from "../Common/SectionTitle";
 import SingleCommunity from "./SingleCommunity";
 import { CommunityType } from "@/types/communityType";
+import { useState } from "react";
+
+
 
 export const areas: any = {
-  NORTH_EAST: 'Northeast',
-  NORTH_WEST: 'Northwest',
+  NORTH_EAST: 'North East',
+  NORTH_WEST: 'North West',
+  SOUTH_EAST:'South East'
 };
+
+const areasData = [
+  'All', 'North East', 'North West', 'Central', 'South West', 'South East'
+]
 
 const communityData: CommunityType[] = [
   {
     id: 0,
     name: "Fernandina Beach",
-    area: areas.NORTH_WEST,
+    area: areas.NORTH_EAST,
     image: "/images/communities/fbeachCommunity.png",
   },
   {
@@ -37,13 +45,15 @@ const communityData: CommunityType[] = [
   {
     id: 4,
     name: "Stuart Main Street",
-    area: areas.NORTH_WEST,
+    area: areas.SOUTH_EAST,
     image: "/images/communities/strtCommunity.png",
   },
 ];
 
 const Communities = () => {
   const router = useRouter();
+  const [selectedArea, setSelectedArea] = useState(null);
+
 
   const handleView = async (community: CommunityType) => {
     await localStorage.removeItem('communityId');
@@ -53,6 +63,18 @@ const Communities = () => {
 
   // Separate sorting of communityData
   const sortedCommunityData = [...communityData].sort((a, b) => a.name.localeCompare(b.name));
+
+
+  const filterCommunitiesByArea = (area) => {
+    setSelectedArea(area);
+  };
+
+  // Filter communities based on selected area
+  const filteredCommunities =
+    selectedArea === 'All' ? sortedCommunityData
+      : selectedArea ? sortedCommunityData.filter((community) => community.area === selectedArea)
+        : sortedCommunityData;
+
 
   return (
     <section
@@ -69,9 +91,24 @@ const Communities = () => {
             center
           />
         </div>
+        
+        <div className="flex justify-center mb-4">
+          {areasData.map((area) => (
+            <button
+              key={area}
+              onClick={() => filterCommunitiesByArea(area)}
+              className={`mx-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none ${selectedArea === area ? 'bg-gray-200' : ''
+                }`}
+              style={{ minWidth: '100px' }}
+            >
+              {`${area}`}
+            </button>
+          ))}
+        </div>
+
 
         <div className="-mx-4 flex flex-wrap justify-center">
-          {sortedCommunityData.map((community) => (
+          {filteredCommunities.map((community) => (
             <SingleCommunity key={community.id} community={community} handleView={handleView} />
           ))}
         </div>
