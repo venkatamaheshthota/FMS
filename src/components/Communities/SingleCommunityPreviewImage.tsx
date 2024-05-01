@@ -62,11 +62,7 @@ const SingleCommunityPreviewImage = ({ community }: { community: CommunityType }
 
       {/* Map iframe */}
   
-      <div style={{ marginTop: '2%', paddingBottom: '100%' }} className="w-full bg-gray-200 rounded-lg shadow-lg relative">
-        <div className="absolute inset-5">
-          <iframe src={mapLink} title="Map" width="100%" height="100%" frameBorder="0"></iframe>
-        </div>
-      </div>
+      <iframe src={mapLink} title="Map" width="100%" height="780" frameBorder="0" style={{marginTop: 10}}/>
 
       {/* BusinessTable */}
       <div style={{ marginTop: '2%' }} className="w-full">
